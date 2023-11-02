@@ -1,0 +1,99 @@
+import  {  useEffect, useState } from 'react';
+import axios from 'axios';
+import ProfileCard from './ProfileCard';
+import { Link } from 'react-router-dom';
+import { FaPen} from 'react-icons/fa';
+import { FaRegTrashCan } from 'react-icons/fa6';
+import { useNavigate } from "react-router-dom";
+
+
+const Profile = () => {
+  const navigate = useNavigate();
+
+  const [userData,setUserData]=useState([]);
+
+
+  const data =[{name:"jack",email:"mail@gmail.com",gender:"male",dob:"12/09/2000",mobileno:"978786656",age:"22"},
+  {name:"vicky",email:"mail@gmail.com",gender:"male",dob:"1212",mobileno:"92132132",age:"28"},
+  {name:"john",email:"mail@gmail.com",gender:"male",dob:"1212",mobileno:"62132132",age:"26"},
+  {name:"gopinath",email:"mail@gmail.com",gender:"male",dob:"1212",mobileno:"42132132",age:"25"}]
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/profile');
+        // console.log("entered into profile");
+        console.log(response.data.foundeditems);
+        setUserData(response.data.foundeditems);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  },[]);
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(`http://localhost:5000/api/delete/${id}`);
+      console.log(response.data);
+      alert("deleted");
+      navigate('/login');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+  return (<div className='profile-card' style={{display:"flex",flexDirection:"column",gap:"30px"}}>
+  <div style={{display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
+  <button className='logout' style={{margin:"20px",color:"red",border:"2px solid red",backgroundColor:"transparent"}}>
+        <Link to="/login">Logout</Link>
+  </button>
+  <button className='create' style={{margin:"20px",color:"red",border:"2px solid red",backgroundColor:"transparent"}}>
+        <Link to="/create">Create Profile</Link>
+  </button>
+  </div>
+  {userData && userData.length > 0 ? (
+  userData.map((user) => {
+    return (
+      <div className="flex flex-col real-profile" key={`${Number(user.age)+Number(user.mobileno)}`}>
+        <h2>Profile </h2>
+        {console.log(user.id)}
+        <div className="flex flex-col form" >
+          <h3>Name: {user.name}</h3>
+          <h3>Email: {user.email}</h3>
+          <h3>Gender: {user.gender}</h3>
+          <h3>Age: {user.age}</h3>
+          <h3>Date of Birth: {user.dob}</h3>
+          <h3>Mobile no: {user.mobileno}</h3>
+          <button>
+            <Link to={`/update/${user.id}`}>
+              <FaPen /> Edit
+            </Link>
+          </button>
+          <button onClick={() => handleDelete(user.id)}>
+            <FaRegTrashCan /> DELETE
+          </button>
+        </div>
+      </div>
+    );
+  })
+) : (
+  data.map((user, index) => {
+    return (
+      <ProfileCard
+        key={index}
+        name={user.name}
+        email={user.email}
+        gender={user.gender}
+        dob={user.dob}
+        mobileno={user.mobileno}
+      />
+    );
+  })
+)}
+
+</div>);
+};
+
+export default Profile;
