@@ -38,7 +38,7 @@ const Profile = () => {
       const response = await axios.delete(`http://localhost:5000/api/delete/${id}`);
       console.log(response.data);
       alert("deleted");
-      navigate('/login');
+      navigate('/');
     } catch (error) {
       console.error(error);
     }
