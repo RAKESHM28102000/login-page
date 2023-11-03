@@ -33,6 +33,7 @@ const Profile = () => {
     fetchData();
   },[]);
   const handleDelete = async (id) => {
+    console.log(id)
     try {
       const response = await axios.delete(`http://localhost:5000/api/delete/${id}`);
       console.log(response.data);
@@ -54,10 +55,10 @@ const Profile = () => {
   </button>
   </div>
   {userData && userData.length > 0 ? (
-  userData.map((user) => {
+  userData.map((user,index) => {
     return (
-      <div className="flex flex-col real-profile" key={`${Number(user.age)+Number(user.mobileno)}`}>
-        <h2>Profile </h2>
+      <div className="flex flex-col real-profile" key={user._id}>
+        <h2>Profile {index+1}</h2>
         {console.log(user.id)}
         <div className="flex flex-col form" >
           <h3>Name: {user.name}</h3>
@@ -67,11 +68,11 @@ const Profile = () => {
           <h3>Date of Birth: {user.dob}</h3>
           <h3>Mobile no: {user.mobileno}</h3>
           <button>
-            <Link to={`/update/${user.id}`}>
+            <Link to={`/update/${user._id}`}>
               <FaPen /> Edit
             </Link>
           </button>
-          <button onClick={() => handleDelete(user.id)}>
+          <button onClick={() => handleDelete(user._id)}>
             <FaRegTrashCan /> DELETE
           </button>
         </div>

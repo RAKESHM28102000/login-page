@@ -135,8 +135,8 @@ input::placeholder{
   align-items: center;
   color: black;
   position:absolute;
-  top:0;
-  left: 10px;
+  right:10px;
+
   background-color: white;
   position: relative;
   border:1px solid transparent;
@@ -151,7 +151,9 @@ input::placeholder{
 }
 .real-profile{
   border: 2px solid gray;
-  padding: 40px;
+  padding:30px;
+  min-width:400px;
+  min-height:600px;
 }
 .form h3{
   color: black;
@@ -173,6 +175,8 @@ input::placeholder{
   .real-profile{
     border: 2px solid rgb(29, 29, 29);
     padding:20px;
+    min-width: auto;
+    min-height: auto;
   }
 
 }

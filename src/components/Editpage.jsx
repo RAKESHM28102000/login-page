@@ -17,6 +17,7 @@ function Editpage() {
 
   useEffect(() => {
     const fetchData = async () => {
+      console.log(id);
       try {
         const response = await axios.get(`http://localhost:5000/api/profile/${id}`);
         setUpdatedData(response.data.foundeditems);
@@ -30,7 +31,7 @@ function Editpage() {
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/profile`, updatedData);
+      const response = await axios.put(`http://localhost:5000/api/profile/${id}`, updatedData);
       console.log(response.data);
       alert("Updated");
       navigate('/');
