@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../API/API_URL';
 
 const Login = ({setStatus}) => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ const Login = ({setStatus}) => {
     e.preventDefault();
     console.log("loading...");
     try {
-      const response = await axios.post('http://localhost:5000/api/login', formData);
+      const response = await axios.post(`${API_URL}api/login`, formData);
       setStatus(true);
       navigate('/');
       console.log(response.data);

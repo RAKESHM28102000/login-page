@@ -1,6 +1,7 @@
 import  { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_URL } from "../API/API_URL";
 
 function Editpage() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ function Editpage() {
     const fetchData = async () => {
       console.log(id);
       try {
-        const response = await axios.get(`http://localhost:5000/api/profile/${id}`);
+        const response = await axios.get(`${API_URL}api/profile/${id}`);
         setUpdatedData(response.data.foundeditems);
       } catch (error) {
         console.error(error);
@@ -31,7 +32,7 @@ function Editpage() {
 
   const handleUpdate = async () => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/profile/${id}`, updatedData);
+      const response = await axios.put(`${API_URL}api/profile/${id}`, updatedData);
       console.log(response.data);
       alert("Updated");
       navigate('/');

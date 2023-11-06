@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FaPen} from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import { useNavigate } from "react-router-dom";
+import { API_URL } from '../API/API_URL';
 
 
 const Profile = () => {
@@ -21,7 +22,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/profile');
+        const response = await axios.get(`${API_URL}api/profile`);
         // console.log("entered into profile");
         console.log(response.data.foundeditems);
         setUserData(response.data.foundeditems);
@@ -35,7 +36,7 @@ const Profile = () => {
   const handleDelete = async (id) => {
     console.log(id)
     try {
-      const response = await axios.delete(`http://localhost:5000/api/delete/${id}`);
+      const response = await axios.delete(`${API_URL}api/delete/${id}`);
       console.log(response.data);
       alert("deleted");
       navigate('/');

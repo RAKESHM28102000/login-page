@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from "../API/API_URL";
 function CreateProfile(){
     const navigate = useNavigate();
     const [user,setUser]=useState({
@@ -19,7 +20,7 @@ function CreateProfile(){
  const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post('http://localhost:5000/api/profile',user);
+          const response = await axios.post(`${API_URL}api/profile`,user);
           console.log(response.data);
           navigate('/'); 
         } catch (error) {
