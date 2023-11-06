@@ -50,7 +50,7 @@ const Profile = ({setStatus}) => {
   return (<div className='profile-card' style={{display:"flex",flexDirection:"column",gap:"30px"}}>
   <div style={{display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
   <button className='logout' style={{margin:"20px",color:"red",border:"2px solid red",backgroundColor:"transparent"}}>
-        <Link to="/login" onClick={()=>setStatus(false)}>Logout</Link>
+        <Link to="/login"><p onClick={()=>setStatus(false)}>Logout</p></Link>
   </button>
   <button className='create' style={{margin:"20px",color:"red",border:"2px solid red",backgroundColor:"transparent"}}>
         <Link to="/create">Create Profile</Link>
