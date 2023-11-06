@@ -1,6 +1,6 @@
 
 function Footer() {
-  return (<footer style={{backgroundColor:"lightgreen",textAlign:"center"}}>
+  return (<footer className='footer'style={{textAlign:"center"}}>
         <h3>GUVI {new Date().getFullYear()}</h3>
     </footer>
   )

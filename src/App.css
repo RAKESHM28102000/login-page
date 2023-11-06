@@ -3,10 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
+html{
+  background: rgb(42,42,42);
+background: linear-gradient(349deg, rgba(42,42,42,1) 7%, rgba(0,4,66,1) 100%, rgba(121,9,36,0.9781162464985994) 100%);
+}
 
 /* this is navbar section */
 .navbar{
   background-color:lightgreen;
+  background: rgb(247,247,247);
+background: linear-gradient(90deg, rgba(247,247,247,1) 1%, rgba(140,160,185,1) 58%, rgba(180,197,218,1) 77%);
 }
 li{
   list-style:none;
@@ -25,11 +31,12 @@ button{
   background-color:transparent;
   border-radius:7%;
   box-shadow: 5px 5px 3px rgb(0.2,.2,.2);
+  background: rgb(247,247,247);
+background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(148,187,233,1) 100%);
   
 }
 button:hover{
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+ 
   font-size:20px;
   width: 130px;
 }
@@ -66,16 +73,20 @@ button:hover{
 /* //home */
 .heading-in-home{
   font-size: 100px;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .span-in-home{
   font-size:150px;
   color: red;
 }
+.span-in-home:hover{
+  color: aqua;
+}
+
 .section{
   min-height:90vh;
-  max-width:1400px;
-  margin: auto;
+  /* max-width:1400px;
+  margin: auto; */
   color:gray;
   display:flex;
   justify-content: center;
@@ -125,6 +136,10 @@ input::placeholder{
 .header{
   position: relative;
 }
+.footer{
+  background: rgb(247,247,247);
+background: linear-gradient(90deg, rgba(247,247,247,1) 1%, rgba(140,160,185,1) 58%, rgba(180,197,218,1) 77%);
+}
 .sidebar{
   display:none;
   min-height: 100vh;
@@ -160,6 +175,12 @@ input::placeholder{
   font-size: large;
 
 }
+.home{
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.login{
+  background-image: url('');
+  border:2px solid gray;}
 @media (max-width:1028px){
   .heading-in-home{
     font-size:20px;

@@ -37,7 +37,7 @@ const Login = ({setStatus}) => {
   };
 
   return (
-    <div className="section flex flex-col">
+    <div className="section flex flex-col login">
       <h2>Login</h2>
       <form onSubmit={handleSubmit} className=' flex flex-col'>
         <input
