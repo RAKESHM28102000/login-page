@@ -61,7 +61,7 @@ const Profile = () => {
       <div className="flex flex-col real-profile" key={user._id}>
         <h2>Profile {index+1}</h2>
         {console.log(user.id)}
-        <div className="flex flex-col form" >
+        <div className="flex flex-col form" style={{backgroundColor:"white"}}>
           <h3>Name: {user.name}</h3>
           <h3>Email: {user.email}</h3>
           <h3>Gender: {user.gender}</h3>
