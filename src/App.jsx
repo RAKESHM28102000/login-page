@@ -25,6 +25,7 @@ function App() {
           <Route path="/create" element={<CreateProfile/>} />
           <Route path="/signup" element={<Signup status={status} setStatus={setStatus}/>} />
           <Route path="/update/:id" element={<Editpage/>} />
+          <Route path='*' element={<Login/>}/>
         </Routes>
         <Footer/>
        
