@@ -30,7 +30,7 @@ button{
   width:90px;
   background-color:transparent;
   border-radius:7%;
-  box-shadow: 5px 5px 3px rgb(0.2,.2,.2);
+  box-shadow: 2px 2px 2px 1px rgb(0,0,0,.3);
   background: rgb(247,247,247);
 background: radial-gradient(circle, rgba(247,247,247,1) 0%, rgba(148,187,233,1) 100%);
   
@@ -173,11 +173,10 @@ background: linear-gradient(90deg, rgba(247,247,247,1) 1%, rgba(140,160,185,1) 5
 .form{
   background-color: white;
   padding:30px;
-  border:2px solid white;
-  box-shadow: 5px 5px 3px rgba(0.3,0.3,.3);
+  box-shadow: 2px 2px 2px 1px rgb(0,0,0,.3);
 }
 .form:hover{
-  box-shadow: inset 5px 5px 3px rgba(0.3,0.3,.3);
+  box-shadow: inset 2px 2px 2px 1px rgb(0,0,0,.3);
 
 }
 .form h3{
