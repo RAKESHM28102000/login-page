@@ -170,6 +170,16 @@ background: linear-gradient(90deg, rgba(247,247,247,1) 1%, rgba(140,160,185,1) 5
   min-width:400px;
   min-height:600px;
 }
+.form{
+  background-color: white;
+  padding:30px;
+  border:2px solid white;
+  box-shadow: 5px 5px 3px rgba(0.3,0.3,.3);
+}
+.form:hover{
+  box-shadow: inset 5px 5px 3px rgba(0.3,0.3,.3);
+
+}
 .form h3{
   color: black;
   font-size: large;

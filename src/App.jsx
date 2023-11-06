@@ -21,7 +21,7 @@ function App() {
          <Routes>
           <Route path="/" exact element={<Home status={status} setStatus={setStatus}/>} />
           <Route path="/login" element={<Login status={status} setStatus={setStatus}/>} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile" element={<Profile status={status} setStatus={setStatus}/>} />
           <Route path="/create" element={<CreateProfile/>} />
           <Route path="/signup" element={<Signup status={status} setStatus={setStatus}/>} />
           <Route path="/update/:id" element={<Editpage/>} />

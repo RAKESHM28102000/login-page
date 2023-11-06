@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import  {  useEffect, useState } from 'react';
 import axios from 'axios';
 import ProfileCard from './ProfileCard';
@@ -8,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from '../API/API_URL';
 
 
-const Profile = () => {
+const Profile = ({setStatus}) => {
   const navigate = useNavigate();
 
   const [userData,setUserData]=useState([]);
@@ -49,7 +50,7 @@ const Profile = () => {
   return (<div className='profile-card' style={{display:"flex",flexDirection:"column",gap:"30px"}}>
   <div style={{display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"}}>
   <button className='logout' style={{margin:"20px",color:"red",border:"2px solid red",backgroundColor:"transparent"}}>
-        <Link to="/login">Logout</Link>
+        <Link to="/login" onClick={()=>setStatus(false)}>Logout</Link>
   </button>
   <button className='create' style={{margin:"20px",color:"red",border:"2px solid red",backgroundColor:"transparent"}}>
         <Link to="/create">Create Profile</Link>
@@ -61,7 +62,7 @@ const Profile = () => {
       <div className="flex flex-col real-profile" key={user._id}>
         <h2>Profile {index+1}</h2>
         {console.log(user.id)}
-        <div className="flex flex-col form" style={{backgroundColor:"white",padding:"30px"}}>
+        <div className="flex flex-col form">
           <h3>Name: {user.name}</h3>
           <h3>Email: {user.email}</h3>
           <h3>Gender: {user.gender}</h3>
