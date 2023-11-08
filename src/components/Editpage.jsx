@@ -35,7 +35,7 @@ function Editpage() {
       const response = await axios.put(`${API_URL}api/profile/${id}`, updatedData);
       console.log(response.data);
       alert("Updated");
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.error(error);
     }
