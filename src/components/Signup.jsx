@@ -50,23 +50,27 @@ function Signup({setStatus }) {
         <input
           type="text"
           name="name"
+          required
           placeholder="Name"
           value={formData.name}
           onChange={handleChange} />
         <input
           type="email"
           name="email"
+          required
           placeholder="Email"
           value={formData.email}
           onChange={handleChange} />
         <input
           type="password"
+          required
           name="password"
           placeholder="Password"
           value={formData.password}
           onChange={handleChange} />
         <input
           type="password"
+          required
           name="confirmPassword"
           placeholder="Confirm Password"
           value={formData.confirmPassword}
