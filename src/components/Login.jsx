@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { API_URL } from '../API/API_URL';
+import { DataProvider } from './ContextData';
 
-const Login = ({setStatus}) => {
+const Login = () => {
+  const {setStatus}=useContext(DataProvider);
   const [loading,setLoading]=useState(false);
   const [formData, setFormData] = useState({
     email: '',

@@ -6,30 +6,31 @@ import Profile from './components/Profile'
 import Home from './components/Home';
 import Signup from './components/Signup';
 import Footer from './components/Footer';
-import { useState } from 'react';
 import Editpage from './components/Editpage';
 import CreateProfile from './components/CreateProfile';
+import ContextData from './components/ContextData';
 
 function App() {
-  const [status,setStatus]=useState(false);
+ 
   return (
     <div>
     <Router>
+    <ContextData>
       <div>
        <Navbar/>
-      
          <Routes>
-          <Route path="/" exact element={<Home status={status} setStatus={setStatus}/>} />
-          <Route path="/login" element={<Login status={status} setStatus={setStatus}/>} />
-          <Route path="/profile" element={<Profile status={status} setStatus={setStatus}/>} />
+          <Route path="/" exact element={<Home/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/profile" element={<Profile/>} />
           <Route path="/create" element={<CreateProfile/>} />
-          <Route path="/signup" element={<Signup status={status} setStatus={setStatus}/>} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/update/:id" element={<Editpage/>} />
           <Route path='*' element={<Login/>}/>
         </Routes>
         <Footer/>
        
       </div>
+      </ContextData>
     </Router>
     </div>
   );

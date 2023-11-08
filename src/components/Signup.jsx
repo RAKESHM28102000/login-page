@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../API/API_URL';
+import { DataProvider } from './ContextData';
 
-function Signup({setStatus }) {
+function Signup() {
   const navigate = useNavigate();
+  const {setStatus}=useContext(DataProvider);
 
   const [formData, setFormData] = useState({
     name: '',

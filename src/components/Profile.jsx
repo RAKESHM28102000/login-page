@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import  {  useEffect, useState } from 'react';
+import  {  useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import ProfileCard from './ProfileCard';
 import { Link } from 'react-router-dom';
@@ -7,12 +7,14 @@ import { FaPen} from 'react-icons/fa';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import { useNavigate } from "react-router-dom";
 import { API_URL } from '../API/API_URL';
+import { DataProvider } from './ContextData';
 
 
-const Profile = ({setStatus}) => {
+const Profile = () => {
   const navigate = useNavigate();
 
   const [userData,setUserData]=useState([]);
+  const {setStatus}=useContext(DataProvider);
 
 
   const data =[{name:"jack",email:"mail@gmail.com",gender:"male",dob:"12/09/2000",mobileno:"978786656",age:"22"},

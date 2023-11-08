@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 
+import { useContext } from "react"
 import Profile from "./Profile"
+import { DataProvider } from "./ContextData";
 
-const Home = ({status}) => {
-  
+const Home = () => {
+  const {status}=useContext(DataProvider);
   return (<main>
     <div className="section home">
     {status ?
