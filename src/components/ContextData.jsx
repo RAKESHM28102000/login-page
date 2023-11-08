@@ -9,7 +9,7 @@ function ContextData({children}) {
     const [status,setStatus]=useState(false);
   return (
     <DataProvider.Provider value={{status,setStatus}}>
-       <div>{children}</div>
+       {children}
     </DataProvider.Provider>
   
   )
