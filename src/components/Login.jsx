@@ -46,7 +46,7 @@ const Login = () => {
     <div className="section flex flex-col login">
       <h2>Login</h2>
       {loading ? (
-        <h1>Loading please wait ..</h1>
+        <h1 className='heading-in-login'>Loading please wait ..</h1>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col">
           <input

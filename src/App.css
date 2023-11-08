@@ -190,6 +190,9 @@ background: linear-gradient(90deg, rgba(247,247,247,1) 1%, rgba(140,160,185,1) 5
 .login{
   background-image: url('');
   border:2px solid gray;}
+.heading-in-login{
+  font-size: 20px;
+}
 @media (max-width:1028px){
   .heading-in-home{
     font-size:20px;
