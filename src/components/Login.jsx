@@ -23,9 +23,9 @@ const Login = ({setStatus}) => {
     console.log("loading...");
     try {
       const response = await axios.post(`${API_URL}api/login`, formData);
-      if (response.status !== 200) {
-        throw new Error("Login failed!");
-      }
+      // if (response.status !== 200) {
+      //   throw new Error("Login failed!");
+      // }
       setStatus(true);
       setLoading(false);
       navigate('/');
